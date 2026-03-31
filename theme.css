@@ -1220,6 +1220,66 @@ body .kanban-plugin__item-form .kanban-plugin__item-input-wrapper {
   padding-bottom: 0;
 }
 
+/* ------------------- */
+/* Regex Mark — ( ) / (x) task lines */
+/* Plugin: https://github.com/Mara-Li/obsidian-regex-mark */
+/* Setup: map regex `\( \)` → class `task-open`, `\(x\)` → class `task-done`, `\(\.\.\)` → class `task-wip` */
+/* ------------------- */
+
+/* Span highlight on the matched text */
+span.task-open {
+  color: var(--color-red);
+  font-weight: var(--bold-weight);
+}
+
+span.task-done {
+  color: var(--color-green);
+  font-weight: var(--bold-weight);
+}
+
+span.task-wip {
+  color: var(--orange);
+  font-weight: var(--bold-weight);
+}
+
+/* Full line background via :has() — Reading view & Live Preview */
+.markdown-preview-view li:has(span.task-open),
+.markdown-source-view.mod-cm6 .cm-line:has(span.task-open) {
+  background-color: rgba(232, 62, 62, 0.08);
+  border-radius: 4px;
+  padding-inline: 4px;
+}
+
+.markdown-preview-view li:has(span.task-done),
+.markdown-source-view.mod-cm6 .cm-line:has(span.task-done) {
+  background-color: rgba(62, 180, 191, 0.08);
+  border-radius: 4px;
+  padding-inline: 4px;
+}
+
+/* Dark mode adjustments */
+.theme-dark .markdown-preview-view li:has(span.task-open),
+.theme-dark .markdown-source-view.mod-cm6 .cm-line:has(span.task-open) {
+  background-color: rgba(232, 62, 62, 0.12);
+}
+
+.theme-dark .markdown-preview-view li:has(span.task-done),
+.theme-dark .markdown-source-view.mod-cm6 .cm-line:has(span.task-done) {
+  background-color: rgba(62, 180, 191, 0.12);
+}
+
+.markdown-preview-view li:has(span.task-wip),
+.markdown-source-view.mod-cm6 .cm-line:has(span.task-wip) {
+  background-color: rgba(232, 125, 62, 0.08);
+  border-radius: 4px;
+  padding-inline: 4px;
+}
+
+.theme-dark .markdown-preview-view li:has(span.task-wip),
+.theme-dark .markdown-source-view.mod-cm6 .cm-line:has(span.task-wip) {
+  background-color: rgba(232, 125, 62, 0.12);
+}
+
 /* ─────────────────────────────────────────────────── */
 /* Styles Settings */
 /* ─────────────────────────────────────────────────── */

@@ -1,3 +1,23 @@
+--------------------------------------------------------------------------------
+### - [x] 1--MARKDOWN--Added support for also parens as Markdown tasks
+
+- `( )` with background color red
+- `(..)` with background color orange (WIP)
+- `(x)` with background color green
+
+- Needs this plugin: https://github.com/Mara-Li/obsidian-regex-mark
+
+Regex for the plugin:
+
+|`\( \)`   |gi|task-open|
+|`\(x\)`   |gi|task-done|
+|`\(\.\.\)`|gi|task-wip|
+|`\(_\)`   |gi|task-open|
+
+
+
+
+--------------------------------------------------------------------------------
 ### Notes on V1 of this theme
 
 V1 of this theme was built using code from **@kepano's** great Minimal theme. Please support @kepano's work!
