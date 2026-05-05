@@ -14,23 +14,13 @@
 - [-] CANCELLED -- `[-]` - Hyphen
 - [_] CANCELLED -- `[_]` - Underline
 
+### Dark
 
+![](assets/penmark--dark.png)
 
+### Light
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![](assets/penmark--light.png)
 
 ### Notes on V1 of this theme
 
