@@ -1,3 +1,37 @@
+## PenMark v2026.05.05
+- [ ] TO-DO -- `[ ]`
+- [·] NEXT -- `[·]` - Medium dot
+- [.] NEXT -- `[.]` - Dot
+- [··] WIP -- `[··]` - Two Medium dots
+- [..] WIP -- `[..]` - Two Dots
+- [/] INCOMPLETE -- `[/]`
+- [\] INCOMPLETE -- `[\]`
+- [x] DONE -- `[x]`
+- [X] DONE -- `[X]`
+- [+] DONE -- `[+]`
+- [v] VALIDATED -- `[v]`
+- [V] VALIDATED -- `[V]`      
+- [-] CANCELLED -- `[-]` - Hyphen
+- [_] CANCELLED -- `[_]` - Underline
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### Notes on V1 of this theme
 
 V1 of this theme was built using code from **@kepano's** great Minimal theme. Please support @kepano's work!

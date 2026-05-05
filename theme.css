@@ -509,6 +509,7 @@ body.fancy-highlight span.search-result-file-matched-text {
 
 /* Completed checkboxes */
 .markdown-preview-view ul > li.task-list-item.is-checked,
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="+"],
 .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="x"],
 .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="X"],
 .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="M"] {
@@ -879,7 +880,14 @@ body.is-mobile:not(.is-ios):not(.floating-button-off).advanced-toolbar
 
 input[data-task='!']:checked,
 input[data-task='*']:checked,
+input[data-task='·']:checked,
+input[data-task='··']:checked,
+input[data-task='···']:checked,
+input[data-task='.']:checked,
+input[data-task='..']:checked,
+input[data-task='...']:checked,
 input[data-task='-']:checked,
+input[data-task='_']:checked,
 input[data-task='<']:checked,
 input[data-task='>']:checked,
 input[data-task='I']:checked,
@@ -899,8 +907,18 @@ li[data-task='!'] > input:checked,
 li[data-task='!'] > p > input:checked,
 li[data-task='*'] > input:checked,
 li[data-task='*'] > p > input:checked,
+li[data-task='·'] > input:checked,
+li[data-task='·'] > p > input:checked,
+li[data-task='··'] > input:checked,
+li[data-task='··'] > p > input:checked,
+li[data-task='.'] > input:checked,
+li[data-task='.'] > p > input:checked,
+li[data-task='..'] > input:checked,
+li[data-task='..'] > p > input:checked,
 li[data-task='-'] > input:checked,
 li[data-task='-'] > p > input:checked,
+li[data-task='_'] > input:checked,
+li[data-task='_'] > p > input:checked,
 li[data-task='<'] > input:checked,
 li[data-task='<'] > p > input:checked,
 li[data-task='>'] > input:checked,
@@ -969,6 +987,29 @@ li[data-task="?"] > p > input:checked {
 .theme-dark li[data-task="?"] > p > input:checked {
   background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16"%3E%3Cpath fill="black" fill-opacity="0.8" fill-rule="evenodd" d="M4.475 5.458c-.284 0-.514-.237-.47-.517C4.28 3.24 5.576 2 7.825 2c2.25 0 3.767 1.36 3.767 3.215c0 1.344-.665 2.288-1.79 2.973c-1.1.659-1.414 1.118-1.414 2.01v.03a.5.5 0 0 1-.5.5h-.77a.5.5 0 0 1-.5-.495l-.003-.2c-.043-1.221.477-2.001 1.645-2.712c1.03-.632 1.397-1.135 1.397-2.028c0-.979-.758-1.698-1.926-1.698c-1.009 0-1.71.529-1.938 1.402c-.066.254-.278.461-.54.461h-.777ZM7.496 14c.622 0 1.095-.474 1.095-1.09c0-.618-.473-1.092-1.095-1.092c-.606 0-1.087.474-1.087 1.091S6.89 14 7.496 14Z"%2F%3E%3C%2Fsvg%3E');
 }
+
+input[data-task="."]:checked,
+li[data-task="."] > input:checked,
+li[data-task="."] > p > input:checked {
+  background-image: none;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+input[data-task="."]:checked:after,
+li[data-task="."] > input:checked:after,
+li[data-task="."] > p > input:checked:after {
+  top: 0;
+  left: 0;
+  content: ".";
+  display: block;
+  position: absolute;
+  background-color: var(--color-accent);
+  width: calc(50% - 0.5px);
+  height: 100%;
+  -webkit-mask-image: none;
+}
+
 input[data-task="/"]:checked,
 li[data-task="/"] > input:checked,
 li[data-task="/"] > p > input:checked {
@@ -990,6 +1031,29 @@ li[data-task="/"] > p > input:checked:after {
   height: 100%;
   -webkit-mask-image: none;
 }
+
+input[data-task="\\"]:checked,
+li[data-task="\\"] > input:checked,
+li[data-task="\\"] > p > input:checked {
+  background-image: none;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+input[data-task="\\"]:checked:after,
+li[data-task="\\"] > input:checked:after,
+li[data-task="\\"] > p > input:checked:after {
+  top: 0;
+  left: 0;
+  content: " \ ";
+  display: block;
+  position: absolute;
+  background-color: var(--color-accent);
+  width: calc(50% - 0.5px);
+  height: 100%;
+  -webkit-mask-image: none;
+}
+
 input[data-task="!"]:checked,
 li[data-task="!"] > input:checked,
 li[data-task="!"] > p > input:checked {
@@ -1018,6 +1082,7 @@ li[data-task="“"] > p > input:checked {
 .theme-dark li[data-task="“"] > p > input:checked {
   background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"%3E%3Cpath fill="black" fill-opacity="0.7" d="M6.5 10c-.223 0-.437.034-.65.065c.069-.232.14-.468.254-.68c.114-.308.292-.575.469-.844c.148-.291.409-.488.601-.737c.201-.242.475-.403.692-.604c.213-.21.492-.315.714-.463c.232-.133.434-.28.65-.35l.539-.222l.474-.197l-.485-1.938l-.597.144c-.191.048-.424.104-.689.171c-.271.05-.56.187-.882.312c-.318.142-.686.238-1.028.466c-.344.218-.741.4-1.091.692c-.339.301-.748.562-1.05.945c-.33.358-.656.734-.909 1.162c-.293.408-.492.856-.702 1.299c-.19.443-.343.896-.468 1.336c-.237.882-.343 1.72-.384 2.437c-.034.718-.014 1.315.028 1.747c.015.204.043.402.063.539l.025.168l.026-.006A4.5 4.5 0 1 0 6.5 10zm11 0c-.223 0-.437.034-.65.065c.069-.232.14-.468.254-.68c.114-.308.292-.575.469-.844c.148-.291.409-.488.601-.737c.201-.242.475-.403.692-.604c.213-.21.492-.315.714-.463c.232-.133.434-.28.65-.35l.539-.222l.474-.197l-.485-1.938l-.597.144c-.191.048-.424.104-.689.171c-.271.05-.56.187-.882.312c-.317.143-.686.238-1.028.467c-.344.218-.741.4-1.091.692c-.339.301-.748.562-1.05.944c-.33.358-.656.734-.909 1.162c-.293.408-.492.856-.702 1.299c-.19.443-.343.896-.468 1.336c-.237.882-.343 1.72-.384 2.437c-.034.718-.014 1.315.028 1.747c.015.204.043.402.063.539l.025.168l.026-.006A4.5 4.5 0 1 0 17.5 10z"%2F%3E%3C%2Fsvg%3E');
 }
+
 input[data-task="-"]:checked,
 li[data-task="-"] > input:checked,
 li[data-task="-"] > p > input:checked {
@@ -1035,6 +1100,26 @@ body:not(.tasks) li[data-task="-"].task-list-item.is-checked {
   color: var(--text-faint);
   text-decoration: line-through solid var(--text-faint) 1px;
 }
+
+input[data-task="_"]:checked,
+li[data-task="_"] > input:checked,
+li[data-task="_"] > p > input:checked {
+  color: var(--text-faint);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z' clip-rule='evenodd' /%3E%3C/svg%3E");
+}
+body:not(.tasks)
+  .markdown-preview-view
+  ul
+  li[data-task="_"].task-list-item.is-checked,
+body:not(.tasks)
+  .markdown-source-view.mod-cm6
+  .HyperMD-task-line[data-task]:is([data-task="_"]),
+body:not(.tasks) li[data-task="_"].task-list-item.is-checked {
+  color: var(--text-faint);
+  text-decoration: line-through solid var(--text-faint) 1px;
+}
+
+
 input[data-task="*"]:checked,
 li[data-task="*"] > input:checked,
 li[data-task="*"] > p > input:checked {
@@ -1158,6 +1243,13 @@ body:not(.tasks) li[data-task="!"].task-list-item.is-checked,
 body:not(.tasks) li[data-task="S"].task-list-item.is-checked,
 body:not(.tasks) li[data-task="?"].task-list-item.is-checked,
 body:not(.tasks) li[data-task="/"].task-list-item.is-checked,
+body:not(.tasks) li[data-task="\\"].task-list-item.is-checked,
+body:not(.tasks) li[data-task="-"].task-list-item.is-checked,
+body:not(.tasks) li[data-task="_"].task-list-item.is-checked,
+body:not(.tasks) li[data-task="·"].task-list-item.is-checked,
+body:not(.tasks) li[data-task="··"].task-list-item.is-checked,
+body:not(.tasks) li[data-task="."].task-list-item.is-checked,
+body:not(.tasks) li[data-task=".."].task-list-item.is-checked,
 body:not(.tasks) li[data-task='"'].task-list-item.is-checked,
 body:not(.tasks) li[data-task="l"].task-list-item.is-checked,
 body:not(.tasks) li[data-task="I"].task-list-item.is-checked,
@@ -1931,3 +2023,420 @@ community:
 - obsidian-system-dark-mode
 - obsidian-style-settings
 */
+
+
+/* ─────────────────────────────────────────────────── */
+/* Penmark Compatibility                               */
+/* ─────────────────────────────────────────────────── */
+
+/* [·] NEXT */
+input[data-task="·"]:checked,
+li[data-task="·"] > input:checked,
+li[data-task="·"] > p > input:checked {
+  background-image: none;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+
+}
+input[data-task="·"]:checked:after,
+li[data-task="·"] > input:checked:after,
+li[data-task="·"] > p > input:checked:after {
+  top: 0;
+  left: 0;
+  content: "•";
+  display: block;
+  position: absolute;
+  border-color: var(--red);
+  background-color: var(--red);
+  width: calc(100%);
+  -webkit-mask-image: none;
+  padding-left: 6px;
+  color: white;
+}
+
+/* [.] NEXT */
+input[data-task="."]:checked,
+li[data-task="."] > input:checked,
+li[data-task="."] > p > input:checked {
+  background-image: none;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+input[data-task="."]:checked:after,
+li[data-task="."] > input:checked:after,
+li[data-task="."] > p > input:checked:after {
+  top: 0;
+  left: 0;
+  content: "•";
+  display: block;
+  position: absolute;
+  border-color: var(--red);
+  background-color: var(--red);
+  width: calc(100% - 0.5px);
+  -webkit-mask-image: none;
+  padding-left: 6px;
+  color: white;
+}
+
+
+/* [/] WIP */
+input[data-task="/"]:checked,
+li[data-task="/"] > input:checked,
+li[data-task="/"] > p > input:checked {
+  background-image: none;
+  background-color: transparent;
+  border-color: var(--orange);
+  position: relative;
+  overflow: hidden;
+}
+input[data-task="/"]:checked:after,
+li[data-task="/"] > input:checked:after,
+li[data-task="/"] > p > input:checked:after {
+  top: 0;
+  left: 0;
+  content: " ";
+  display: block;
+  position: absolute;
+  border-color: var(--orange);
+  background-color: var(--orange);
+  width: calc(100%);
+  height: 50%;
+  -webkit-mask-image: none;
+}
+
+/* [\] WIP */
+input[data-task="\\"]:checked,
+li[data-task="\\"] > input:checked,
+li[data-task="\\"] > p > input:checked {
+  background-image: none;
+  background-color: transparent;
+  border-color: var(--orange);
+  position: relative;
+  overflow: hidden;
+}
+input[data-task="\\"]:checked:after,
+li[data-task="\\"] > input:checked:after,
+li[data-task="\\"] > p > input:checked:after {
+  top: 0;
+  left: 0;
+  content: " ";
+  display: block;
+  position: absolute;
+  border-color: var(--orange);
+  background-color: var(--orange);
+  width: calc(100%);
+  height: 50%;
+  -webkit-mask-image: none;
+}
+
+/* [··] WIP */
+input[data-task="··"]:checked,
+li[data-task="··"] > input:checked,
+li[data-task="··"] > p > input:checked {
+  background-image: none;
+  background-color: transparent;
+  border-color: var(--orange);
+  position: relative;
+  overflow: hidden;
+}
+input[data-task="··"]:checked:after,
+li[data-task="··"] > input:checked:after,
+li[data-task="··"] > p > input:checked:after {
+  top: 0;
+  left: 0;
+  content: "··";
+  display: block;
+  position: absolute;
+  border-color: var(--orange);
+  background-color: var(--orange);
+  width: calc(100% - 0.5px);
+  height: 50%;
+  -webkit-mask-image: none;
+}
+
+/* [..] WIP */
+input[data-task=".."]:checked,
+li[data-task=".."] > input:checked,
+li[data-task=".."] > p > input:checked {
+  background-image: none;
+  background-color: transparent;
+  border-color: var(--orange);
+  position: relative;
+  overflow: hidden;
+}
+input[data-task=".."]:checked:after,
+li[data-task=".."] > input:checked:after,
+li[data-task=".."] > p > input:checked:after {
+  top: 0;
+  left: 0;
+  content: "..";
+  display: block;
+  position: absolute;
+  border-color: var(--orange);
+  background-color: var(--orange);
+  width: calc(100% - 0.5px);
+  height: 50%;
+  -webkit-mask-image: none;
+}
+
+
+/* [-] CANCELLED */
+input[data-task="-"]:checked,
+li[data-task="-"] > input:checked,
+li[data-task="-"] > p > input:checked {
+  background-image: none;
+  background-color: transparent;
+  border-color: var(--color-red);
+  position: relative;
+  overflow: hidden;
+}
+input[data-task="-"]:checked:after,
+li[data-task="-"] > input:checked:after,
+li[data-task="-"] > p > input:checked:after {
+  top: 0;
+  left: 0;
+  display: block;
+  position: absolute;
+  border-color: var(--color-red);
+  background-color: var(--color-red);
+  width: calc(100%);
+  height: 100%;
+  -webkit-mask-image: none;
+  padding-left: 4px;
+}
+
+
+/* [_] CANCELLED */
+input[data-task="_"]:checked,
+li[data-task="_"] > input:checked,
+li[data-task="_"] > p > input:checked {
+  background-image: none;
+  background-color: transparent;
+  border-color: var(--color-red);
+  position: relative;
+  overflow: hidden;
+}
+input[data-task="_"]:checked:after,
+li[data-task="_"] > input:checked:after,
+li[data-task="_"] > p > input:checked:after {
+  top: 0;
+  left: 0;
+  display: block;
+  position: absolute;
+  border-color: var(--color-red);
+  background-color: var(--color-red);
+  width: calc(100%);
+  height: 100%;
+  -webkit-mask-image: none;
+  padding-left: 4px;
+}
+
+
+/* [v] VERIFIED */
+input[data-task="v"]:checked,
+li[data-task="v"] > input:checked,
+li[data-task="v"] > p > input:checked {
+  background-image: none;
+  background-color: transparent;
+  border-color: var(--color-blue);
+  position: relative;
+  overflow: hidden;
+}
+input[data-task="v"]:checked:after,
+li[data-task="v"] > input:checked:after,
+li[data-task="v"] > p > input:checked:after {
+  top: 0;
+  left: 0;
+  display: block;
+  position: absolute;
+  border-color: var(--color-blue);
+  background-color: var(--color-blue);
+  width: calc(100%);
+  height: 100%;
+  -webkit-mask-image: none;
+  padding-left: 4px;
+  content: "v";
+  color: white;
+}
+
+/* [V] VERIFIED */
+input[data-task="V"]:checked,
+li[data-task="V"] > input:checked,
+li[data-task="V"] > p > input:checked {
+  background-image: none;
+  background-color: transparent;
+  border-color: var(--color-blue);
+  position: relative;
+  overflow: hidden;
+}
+input[data-task="V"]:checked:after,
+li[data-task="V"] > input:checked:after,
+li[data-task="V"] > p > input:checked:after {
+  top: 0;
+  left: 0;
+  display: block;
+  position: absolute;
+  border-color: var(--color-blue);
+  background-color: var(--color-blue);
+  width: calc(100%);
+  height: 100%;
+  -webkit-mask-image: none;
+  padding-left: 3px;
+  content: "V";
+  color: white;
+}
+
+
+
+/* [x] DONE */
+input[data-task="x"]:checked,
+li[data-task="x"] > input:checked,
+li[data-task="x"] > p > input:checked {
+  background-image: none;
+  background-color: transparent;
+  border-color: var(--color-green);
+  position: relative;
+  overflow: hidden;
+}
+input[data-task="x"]:checked:after,
+li[data-task="x"] > input:checked:after,
+li[data-task="x"] > p > input:checked:after {
+  top: 0;
+  left: 0;
+  display: block;
+  position: absolute;
+  border-color: var(--color-green);
+  background-color: var(--color-green);
+  width: calc(100%);
+  height: 100%;
+  -webkit-mask-image: none;
+  padding-left: 4px;
+  content: "x";
+  color: white;
+}
+
+
+/* [X] DONE */
+input[data-task="X"]:checked,
+li[data-task="X"] > input:checked,
+li[data-task="X"] > p > input:checked {
+  background-image: none;
+  background-color: transparent;
+  border-color: var(--color-green);
+  position: relative;
+  overflow: hidden;
+}
+input[data-task="X"]:checked:after,
+li[data-task="X"] > input:checked:after,
+li[data-task="X"] > p > input:checked:after {
+  top: 0;
+  left: 0;
+  display: block;
+  position: absolute;
+  border-color: var(--color-green);
+  background-color: var(--color-green);
+  width: calc(100%);
+  height: 100%;
+  -webkit-mask-image: none;
+  padding-left: 3px;
+  content: "X";
+  color: white;
+}
+
+
+/* [+] DONE */
+input[data-task="+"]:checked,
+li[data-task="+"] > input:checked,
+li[data-task="+"] > p > input:checked {
+  background-image: none;
+  background-color: transparent;
+  border-color: var(--color-green);
+  position: relative;
+  overflow: hidden;
+}
+input[data-task="+"]:checked:after,
+li[data-task="+"] > input:checked:after,
+li[data-task="+"] > p > input:checked:after {
+  top: 0;
+  left: 0;
+  display: block;
+  position: absolute;
+  border-color: var(--color-green);
+  background-color: var(--color-green);
+  width: calc(100%);
+  height: 100%;
+  -webkit-mask-image: none;
+  padding-left: 3.5px;
+  padding-bottom: 2px;
+  content: "+";
+  color: white;
+}
+
+
+
+
+
+
+
+
+/* ─────────────────────────────────────────────────── */
+/* Regex Mark — ( ) / (x) task lines */
+/* Plugin: https://github.com/Mara-Li/obsidian-regex-mark */
+/* Setup: map regex `\( \)` → class `task-open`, `\(x\)` → class `task-done`, `\(\.\.\)` → class `task-wip` */
+/* ─────────────────────────────────────────────────── */
+
+/* Span highlight on the matched text */
+span.task-open {
+  color: var(--color-red);
+  font-weight: var(--bold-weight);
+}
+
+span.task-done {
+  color: var(--color-green);
+  font-weight: var(--bold-weight);
+}
+
+span.task-wip {
+  color: var(--orange);
+  font-weight: var(--bold-weight);
+}
+
+/* Full line background via :has() — Reading view & Live Preview */
+.markdown-preview-view li:has(span.task-open),
+.markdown-source-view.mod-cm6 .cm-line:has(span.task-open) {
+  background-color: rgba(232, 62, 62, 0.08);
+  border-radius: 4px;
+  padding-inline: 4px;
+}
+
+.markdown-preview-view li:has(span.task-done),
+.markdown-source-view.mod-cm6 .cm-line:has(span.task-done) {
+  background-color: rgba(62, 180, 191, 0.08);
+  border-radius: 4px;
+  padding-inline: 4px;
+}
+
+/* Dark mode adjustments */
+.theme-dark .markdown-preview-view li:has(span.task-open),
+.theme-dark .markdown-source-view.mod-cm6 .cm-line:has(span.task-open) {
+  background-color: rgba(232, 62, 62, 0.12);
+}
+
+.theme-dark .markdown-preview-view li:has(span.task-done),
+.theme-dark .markdown-source-view.mod-cm6 .cm-line:has(span.task-done) {
+  background-color: rgba(62, 180, 191, 0.12);
+}
+
+.markdown-preview-view li:has(span.task-wip),
+.markdown-source-view.mod-cm6 .cm-line:has(span.task-wip) {
+  background-color: rgba(232, 125, 62, 0.08);
+  border-radius: 4px;
+  padding-inline: 4px;
+}
+
+.theme-dark .markdown-preview-view li:has(span.task-wip),
+.theme-dark .markdown-source-view.mod-cm6 .cm-line:has(span.task-wip) {
+  background-color: rgba(232, 125, 62, 0.12);
+}
