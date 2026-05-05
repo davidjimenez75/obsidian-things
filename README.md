@@ -1,26 +1,33 @@
-## PenMark v2026.05.05
-- [ ] TO-DO -- `[ ]`
-- [·] NEXT -- `[·]` - Medium dot
-- [.] NEXT -- `[.]` - Dot
-- [··] WIP -- `[··]` - Two Medium dots
-- [..] WIP -- `[..]` - Two Dots
-- [/] INCOMPLETE -- `[/]`
-- [\] INCOMPLETE -- `[\]`
-- [x] DONE -- `[x]`
-- [X] DONE -- `[X]`
-- [+] DONE -- `[+]`
-- [v] VALIDATED -- `[v]`
-- [V] VALIDATED -- `[V]`      
-- [-] CANCELLED -- `[-]` - Hyphen
-- [_] CANCELLED -- `[_]` - Underline
+## Added support for PenMark v2026.05.05
 
-### Dark
+Modified version to support PenMark.
+
+## Dark Mode
 
 ![](assets/penmark--dark.png)
 
-### Light
+## Light Mode
 
 ![](assets/penmark--light.png)
+
+## PenMark
+
+- [ ] TO-DO -- `[ ]` - Space
+- [·] NEXT -- `[·]` - Medium dot
+- [.] NEXT -- `[.]` - Dot
+- [··] WIP -- `[··]` - Two Medium dots
+- [..] WIP -- `[..]` - Two dots
+- [/] INCOMPLETE -- `[/]` - Forward slash
+- [\] INCOMPLETE -- `[\]` - Backslash
+- [x] DONE -- `[x]` - Lowercase x
+- [X] DONE -- `[X]` - Uppercase X
+- [+] DONE -- `[+]` - Plus
+- [v] VALIDATED -- `[v]` - Lowercase v
+- [V] VALIDATED -- `[V]` - Uppercase V
+- [-] CANCELLED -- `[-]` - Hyphen
+- [_] CANCELLED -- `[_]` - Underline
+
+
 
 ### Notes on V1 of this theme
 
