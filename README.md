@@ -1,4 +1,4 @@
-## Added support for PenMark v2026.05.05
+## Added support for PenMark v2026.05.06
 
 Modified version to support PenMark.
 
@@ -10,22 +10,24 @@ Modified version to support PenMark.
 
 ![](assets/penmark--light.png)
 
-## PenMark
+**PenMark v2026.05.06**
+
+100% pen and paper and filesystem compatibles.
 
 - [ ] TO-DO -- `[ ]` - Space
-- [·] NEXT -- `[·]` - Medium dot
-- [.] NEXT -- `[.]` - Dot
-- [··] WIP -- `[··]` - Two Medium dots
-- [..] WIP -- `[..]` - Two dots
-- [/] INCOMPLETE -- `[/]` - Forward slash
-- [\] INCOMPLETE -- `[\]` - Backslash
+- [·] WIP -- `[·]` - Medium dot
+- [-] CANCELLED -- `[-]` - Hyphen
+- [+] DONE -- `[+]` - Plus
+
+**OTHERS**
+
+- [_] CANCELLED -- `[_]` - Underline
+- [.] WIP -- `[.]` - Dot
 - [x] DONE -- `[x]` - Lowercase x
 - [X] DONE -- `[X]` - Uppercase X
-- [+] DONE -- `[+]` - Plus
-- [v] VALIDATED -- `[v]` - Lowercase v
-- [V] VALIDATED -- `[V]` - Uppercase V
-- [-] CANCELLED -- `[-]` - Hyphen
-- [_] CANCELLED -- `[_]` - Underline
+- [/] INCOMPLETE -- `[/]` - Forward slash
+- [v] VALIDATED/VERIFIED -- `[v]` - Lowercase v
+- [V] VALIDATED/VERIFIED -- `[V]` - Uppercase V
 
 
 

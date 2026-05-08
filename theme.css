@@ -2044,11 +2044,11 @@ li[data-task="·"] > input:checked:after,
 li[data-task="·"] > p > input:checked:after {
   top: 0;
   left: 0;
-  content: "•";
+  content: "·";
   display: block;
   position: absolute;
-  border-color: var(--red);
-  background-color: var(--red);
+  border-color: var(--orange);
+  background-color: var(--orange);
   width: calc(100%);
   -webkit-mask-image: none;
   padding-left: 6px;
@@ -2069,11 +2069,11 @@ li[data-task="."] > input:checked:after,
 li[data-task="."] > p > input:checked:after {
   top: 0;
   left: 0;
-  content: "•";
+  content: ".";
   display: block;
   position: absolute;
-  border-color: var(--red);
-  background-color: var(--red);
+  border-color: var(--orange);
+  background-color: var(--orange);
   width: calc(100% - 0.5px);
   -webkit-mask-image: none;
   padding-left: 6px;
